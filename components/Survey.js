@@ -7,6 +7,14 @@ function random(array) {
 
 export default class Survey extends React.Component {
 
+  componentWillReceiveProps(nextProps){
+    if(nextProps.rating > this.props.rating){
+      this.increaseRating();
+    }else if(nextProps.rating < this.props.rating){
+      this.decreaseRating();
+    }
+  }
+
   constructor(props) {
     super(props);
 
