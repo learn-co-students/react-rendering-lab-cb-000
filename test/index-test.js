@@ -1,4 +1,8 @@
 import React from 'react';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
@@ -7,6 +11,7 @@ import Rating from '../src/components/Rating';
 import Circle from '../src/components/Circle';
 import Animation from '../src/components/Animation';
 import Pikachu from '../src/components/Pikachu';
+
 
 
 describe('Rating', () => {
