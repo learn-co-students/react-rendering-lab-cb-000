@@ -2,11 +2,15 @@ import React from "react";
 
 class Animation extends React.Component {
   constructor(props) {
-    super(props);
+    super();
 
     this.state = {
       url: " http://placehold.it/500x150",
     };
+  }
+
+  componentWillUpdate() {
+    this.showLoadingBar()
   }
 
   getNewCat = () => {
