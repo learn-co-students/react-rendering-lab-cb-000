@@ -1,13 +1,15 @@
 import React from "react";
 
-class Animation extends React.Component {
+export default class Animation extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      url: " http://placehold.it/500x150",
+      url: "http://placehold.it/500x150",
     };
   }
+
+  componentWillUpdate = () => this.showLoadingBar();
 
   getNewCat = () => {
     fetch("http://api.giphy.com/v1/gifs/random?rating=g&api_key=dc6zaTOxFJmzC")
@@ -43,4 +45,3 @@ class Animation extends React.Component {
   }
 }
 
-export default Animation;
