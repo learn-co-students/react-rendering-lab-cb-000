@@ -26,6 +26,25 @@ class Rating extends React.Component {
       </div>
     )
   }
+  
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.rating > this.props.rating)
+      this.setState({
+        increasing: true,
+        decreasing: false
+      })
+    else if (nextProps.rating < this.props.rating)
+      this.setState({
+        increasing: false,
+        decreasing: true
+      })
+    else
+      this.setState({
+        increasing: false,
+        decreasing: false
+      })
+  }
+  
 }
 
 export default Rating;
