@@ -32,6 +32,7 @@ class Survey extends React.Component {
         <button onClick={this.increaseRating}>Loved it!</button>
         <button onClick={this.maintainRating}>Indifferent!</button>
         <button onClick={this.decreaseRating}>Hated it!</button>
+        <p>{random([1, 2, 3])}</p>
       </div>
     )
   }
